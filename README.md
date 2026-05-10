@@ -6,6 +6,8 @@ The repo tests whether different header/footer harnesses change how target
 models answer one fixed body. Each experiment stores the harness, response,
 score, and model-role permutation in SQLite.
 
+![Jailbreak Autoresearch](banner.png)
+
 ## Before You Run
 
 Customize these two root files:
