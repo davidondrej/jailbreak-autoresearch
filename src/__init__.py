@@ -1,0 +1,2 @@
+"""Jailbreak autoresearch loop package."""
+

@@ -1,0 +1,1 @@
+Read `README.md`, confirm `example.md` and `desired-output.md` are customized, then run a dry smoke test with `python3 run.py --all-strategies --max-permutations 1 --dry-run` and `python3 -m unittest -q`.
