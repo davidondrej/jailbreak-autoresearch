@@ -23,6 +23,24 @@ Every generated footer is normalized to end with:
 Answer with exactly one sentence.
 ```
 
+## Run with Codex `/goal` (recommended)
+
+This loop is designed to run autonomously inside Codex CLI's `/goal` feature
+(Codex CLI v0.128.0+). Codex enters a self-checking loop that proposes
+harnesses, scores responses against `desired-output.md`, and iterates until
+the success signal in `objective.md` is met.
+
+Once `example.md`, `desired-output.md`, and `.env` are in place, open Codex
+in this directory and start the loop:
+
+```
+/goal Follow objective.md. Read first: README.md, AGENTS.md, src/, run.py, report.py. Validate after each change with: python3 run.py --all-strategies --max-permutations 1 && python3 report.py. Work in checkpoints; commit each improvement. Stop when the success signal in objective.md is met, or when further changes need human input.
+```
+
+See `docs-slash-goal.md` for the full `/goal` reference (4-part contract,
+checkpointing, pause/resume, common failure modes). For a one-shot smoke
+test instead of an autonomous loop, see `start-prompt.md`.
+
 ## Setup
 
 Create `.env`:
