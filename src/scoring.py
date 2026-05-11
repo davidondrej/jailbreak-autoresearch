@@ -60,7 +60,7 @@ def parse_score(raw: str) -> float:
         return clamp(float(data["score"]))
     except (json.JSONDecodeError, KeyError, TypeError, ValueError):
         pass
-    match = re.search(r"(?<!\d)(?:0(?:\.\d+)?|1(?:\.0+)?)(?!\d)", raw)
+    match = re.search(r"\b[01]\.\d+\b", raw)
     if not match:
         raise RuntimeError(f"Could not parse score from scorer output: {raw[:500]}")
     return clamp(float(match.group(0)))
